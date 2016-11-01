@@ -17,6 +17,15 @@ def get_add():
     b = int(b)
     c = a+b
     return jsonify({"sum": c})
+
+@app.route('/api/sub', methods=['GET'])
+def get_sub():
+    a = request.args.get('num1')
+    a = int(a)
+    b = request.args.get('num2')
+    b = int(b)
+    c = a-b
+    return jsonify({"difference": c})
     
 if __name__ == '__main__':
         app.run()
