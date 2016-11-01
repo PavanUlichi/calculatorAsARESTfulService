@@ -12,27 +12,27 @@ def get_tasks():
 @app.route('/api/add', methods=['GET'])
 def get_add():
     a = request.args.get('num1')
-    a = int(a)
+    a = float(a)
     b = request.args.get('num2')
-    b = int(b)
+    b = float(b)
     c = a+b
     return jsonify({"sum": c})
 
 @app.route('/api/sub', methods=['GET'])
 def get_sub():
     a = request.args.get('num1')
-    a = int(a)
+    a = float(a)
     b = request.args.get('num2')
-    b = int(b)
+    b = float(b)
     c = a-b
     return jsonify({"difference": c})
 
 @app.route('/api/mul', methods=['GET'])
 def get_mul():
     a = request.args.get('num1')
-    a = int(a)
+    a = float(a)
     b = request.args.get('num2')
-    b = int(b)
+    b = float(b)
     c = a*b
     return jsonify({"product": c})
 
