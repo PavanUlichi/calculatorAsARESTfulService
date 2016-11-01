@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calculator</title>
+		<link type="image" href="https://i.ytimg.com/vi/E7G_WgSd7IQ/maxresdefault.jpg"/>
+	</head>
+	<link type="text/css" rel="stylesheet" href="/static/stylesheet.css"/>
+	<script type="text/javascript" src="javascript.js"></script>
+	<div>
+	<body background="http://static1.squarespace.com/static/52e31194e4b09261a16b7bab/t/5752590fb6aa60a82fc4cf06/1465014547355/Loan-Calculator-1.jpg?format=1500w">
+	</div>	
+	<h1 style="text-align:center;color:white;font-size:45px;font-family:impact">Arithmetic Operations</h1>
+	<body>
+		<form action="http://ec2-54-213-242-184.us-west-2.compute.amazonaws.com/api" method="get">
+			<fieldset>
+			<legend style="color:white; font-size:20px"><en>Please enter 2 numbers and choose an operation</en></legend>
+			<strong>Enter first number:</strong><br>
+			<input type="text" name="num1" required><br>
+			<strong>Enter second number:</strong><br>
+			<input type="text" name="num2" required><br>
+			<input type="radio" name="opp" value="add" required><span style="color:black"><strong>Addition</strong></span>
+			<input type="radio" name="opp" value="sub" ><span style="color:black"><strong>Subtraction</strong></span>
+			<input type="radio" name="opp" value="mul"><span style="color:black"><strong>Multiplication</strong></span>
+			<input type="radio" name="opp" value="div"><span style="color:black"><strong>Division</strong></span><br>
+			<button  type="submit"> Submit</button>
+			</fieldset>
+		</form>		
+	</body>
+</html>
