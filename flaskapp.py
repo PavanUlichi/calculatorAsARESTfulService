@@ -44,6 +44,23 @@ def get_div():
     b = float(b)
     c = a/b
     return jsonify({"ratio": c})
+
+@app.route('/api', methods=['GET'])
+def get_opr():
+    a = request.args.get('num1')
+    a = float(a)
+    b = request.args.get('num2')
+    b = float(b)
+    o = request.args.get('opp')
+    if(o == 'add'):
+        c = a+b
+    elif(o == 'sub'):
+        c = a-b
+    elif(o == 'mul'):
+        c = a*b
+    else:
+        c = a/b
+    return jsonify({"result": c})
     
 if __name__ == '__main__':
         app.run()
