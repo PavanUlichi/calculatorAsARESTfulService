@@ -26,6 +26,15 @@ def get_sub():
     b = int(b)
     c = a-b
     return jsonify({"difference": c})
+
+@app.route('/api/mul', methods=['GET'])
+def get_mul():
+    a = request.args.get('num1')
+    a = int(a)
+    b = request.args.get('num2')
+    b = int(b)
+    c = a*b
+    return jsonify({"product": c})
     
 if __name__ == '__main__':
         app.run()
