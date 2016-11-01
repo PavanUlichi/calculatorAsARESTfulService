@@ -35,6 +35,15 @@ def get_mul():
     b = int(b)
     c = a*b
     return jsonify({"product": c})
+
+@app.route('/api/div', methods=['GET'])
+def get_div():
+    a = request.args.get('num1')
+    a = float(a)
+    b = request.args.get('num2')
+    b = float(b)
+    c = a/b
+    return jsonify({"ratio": c})
     
 if __name__ == '__main__':
         app.run()
