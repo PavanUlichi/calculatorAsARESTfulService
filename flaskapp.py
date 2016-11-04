@@ -4,6 +4,7 @@ from flask import abort
 
 
 app = Flask(__name__)
+app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 
 @app.route('/', methods=['GET','POST'])
 def get_tasks():
