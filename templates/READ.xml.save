@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?><rsdl><description>This Webservice implements 4 basic arthemetic operations i.e., addition, subtraction, multiplication and division. Each of these 4 operations takes in three parameters as input from 
+the user. These parameters are num1, num2 and opp, which represent the two numbers and the type of operation to be performed on them. These inputs may be given as integers or floating 
+point numbers. The API services i.e., addition, subtraction, multiplication and division offered by this app are accessible at /api/add, /api/sub, /api/mul and /api/div respectively.
+Each of them takes the input values as GET parameters and will yield a JSON-formatted dictionary result containing the result of the operation over the two input numbers.</description><version major='1' minor='0' build='0' revision='0' /><links>
+<link rel='get' href='/api/add'><request><url><parameters_se<parameter type='xs:decimal' required='true'>
+                            <name>num1</name>
+                            <value>First operand or number in arthemetic operation</value>
+                        </parameter>
+                        <parameter type='xs:decimal' required='true'>
+                            <name>num2</name>
+                            <value>Second operand or number in arthemetic operation</value>
+                        </parameter>
+                    </parameters_set>
+                </url>
+            </request>
+            <response>
+                <type>JSON containing result</type>
+            </response>
+        </link>
+        <link rel='get' href='/api/sub'>
+            <request>
+                <url>
+                    <parameters_set>
+                        <parameter type='xs:decimal' required='true'>
+                            <name>num1</name>
+                            <value>First operand or number in arthemetic operation</value>
+                        </parameter>
+                        <parameter type='xs:decimal' required='true'>
+                            <name>num2</name>
+                            <value>Second operand or number in arthemetic operation</value>
+                        </parameter>
+                    </parameters_set>
+                </url>
+            </request>
+            <response>
+                <type>JSON containing result</type>
+            </response>
+        </link>
+        <link rel='get' href='/api/mul'>
+            <request>
+                <url>
+                    <parameters_set>
+                        <parameter type='xs:decimal' required='true'>
+                            <name>num1</name>
+                            <value>First operand or number in arthemetic operation</value>
+                        </parameter>
+                        <parameter type='xs:decimal' required='true'>
+                            <name>num2</name>
+                            <value>Second operand or number in arthemetic operation</value>
+                        </parameter>
+                    </parameters_set>
+                </url>
+            </request>
+            <response>
+                <type>JSON containing result</type>
+            </response>
+        </link>
+        <link rel='get' href='/api/div'>
+            <request>
+                <url>
+                    <parameters_set>
+                        <parameter type='xs:decimal' required='true'>
+                            <name>num1</name>
+                            <value>First operand or number in arthemetic operation</value>
+                        </parameter>
+                        <parameter type='xs:decimal' required='true'>
+                            <name>num2</name>
+                            <value>Second operand or number in arthemetic operation</value>
+                        </parameter>
+                    </parameters_set>
+                </url>
+            </request>
+            <response>
+                <type>JSON containing result</type>
+            </response>
+        </link>
+    </links>
+</rsdl>
+

@@ -1,7 +1,7 @@
 #!/usr/bin/python
 from flask import Flask, jsonify, render_template, request
 from flask import abort
-
+from flask import Response
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
@@ -9,6 +9,11 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
 @app.route('/', methods=['GET','POST'])
 def get_tasks():
     return render_template('index.html')
+
+@app.route('/api/rsdl', methods=['GET'])
+def get_xml():
+    xml = render_template('READ.xml')
+    return Response(xml, mimetype='text/xml')
 
 @app.route('/api/add', methods=['GET','POST'])
 def get_add():
