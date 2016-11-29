@@ -10,7 +10,7 @@
 	</div>	
 	<h1 style="text-align:center;color:white;font-size:45px;font-family:impact">Arithmetic Operations</h1>
 	<body>
-		<form id="cal" action="http://ec2-54-213-242-184.us-west-2.compute.amazonaws.com/api" method="get">
+		<div><form id="cal" action="http://ec2-54-213-242-184.us-west-2.compute.amazonaws.com/api" method="get">
 			<fieldset>
 			<legend style="color:white; font-size:20px"><en>Please enter 2 numbers and choose an operation</en></legend>
 			<strong>Enter first number:</strong><br>
@@ -23,7 +23,16 @@
 			<input type="radio" name="opp" value="div"><span style="color:black"><strong>Division</strong></span><br>
 			<button  type="submit"> Submit</button>
 			</fieldset>
-		</form>
+		</form></div>
+		<br><br><br>
+		<div><form id="prime" method="get" action="http://ec2-54-213-242-184.us-west-2.compute.amazonaws.com/api/prime">
+			<fieldset>
+			<legend style="color:white; font-size:20px"><en>Prime or not</en></legend>
+                        <strong>Please enter your number:</strong><br>
+			<input type="text" id = "num" name="number" required><br>
+			<button  type="submit"> Submit</button>
+			</fieldset>
+</form>
          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type='text/javascript'>
 $(document).ready(function() {
@@ -54,6 +63,25 @@ $("body").html('<html><h1 style="color:white">The result is ' +data.result +'</h
 });
 });
 </script>
-		
+
+<script type='text/javascript'>
+$(document).ready(function(){
+$( '#prime' ) .submit( function( e ){
+e.preventDefault();
+var ur = 'http://ec2-54-213-242-184.us-west-2.compute.amazonaws.com/api/prime';
+var num = document.getElementById("num").value;
+$.ajax({
+url: ur,
+type: 'GET',
+data: "number=" + num,
+processData: false,
+contentType: false,
+success: function(data){
+$("body").html('<html><h1 style="color:white">The input is ' +data.result  +'</h1></html>');
+}
+});
+});
+});
+</script>
 </body>
 </html>

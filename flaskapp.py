@@ -2,6 +2,7 @@
 from flask import Flask, jsonify, render_template, request
 from flask import abort
 from flask import Response
+import requests
 
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = False
@@ -50,7 +51,16 @@ def get_div():
     b = float(b)
     c = a/b
     return jsonify({"result": c})
-    
+
+@app.route('/api/prime', methods=['GET', 'POST'])
+def get_prime():
+	a = request.args.get('number')
+	ur = "http://ec2-35-160-1-123.us-west-2.compute.amazonaws.com/api/prime"
+	ur = ur + '?number=' + a
+	r = requests.get(ur)
+	p = r.content
+	return  Response(p, mimetype='application/json')
+
 if __name__ == '__main__':
         app.run()
 
